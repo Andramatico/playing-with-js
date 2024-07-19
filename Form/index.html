@@ -12,15 +12,14 @@
 
 <body>
     <h1> General Form </h1>
-    <form>
-        <label  >Nome:</label><br>
-        <input id="name" type="text" placeholder="Joao Silva" required><br>
+    <form onsubmit=" validateForm()">
+        <label>Nome:</label><br>
+        <input id="name" type="text" placeholder="Joao Silva"><br>
         <label for="mail">Email:</label><br>
-        <input id="mail" placeholder="Joao@email.com" type="text"
-            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Email Invalido" required><br>
+        <input id="mail" placeholder="Joao@email.com" type="email"><br>
         <label for="age">Idade:</label><br>
-        <input id="age" placeholder="18" type="number" required><br>
-        <input onclick="validateForm()" id="submit" type="submit" value="Submit">
+        <input id="age" placeholder="18" type="number"><br>
+        <input id="submit" type="submit" value="submit">
 
 
     </form>

@@ -1,35 +1,36 @@
 
 
+
 function validateForm() {
-    let x = document.getElementById("name").value;
-    let y= document.getElementById("mail").value;
-    let z= document.getElementById("age").value;
-    if (x == "") {
+    event.preventDefault()
+    const name = document.getElementById("name");
+    const mail = document.getElementById("mail");
+    const age = document.getElementById("age");
+    const regex = "[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$";
+
+    if (name.value === "") {
         alert("Preencha todos os espacos");
-        document.getElementById("name").style.backgroundColor = "red";
-        return false;
-    }
-    else if (y == "" ) {
+        name.style.backgroundColor = "red";
+
+    } else if (mail.value === "") {
         alert("Preencha todos os espacos");
-        document.getElementById("mail").style.backgroundColor = "red";
-        return false;
-    }
-    else if (z == "") {
+        mail.style.backgroundColor = "red";
+    } else if (!mail.value.match(regex)) {
+        alert("Email Invalido");
+        mail.style.backgroundColor = "red";
+    } else if (age.value === "") {
         alert("Preencha todos os espacos");
-        document.getElementById("age").style.backgroundColor = "red";
-        return false;
-    }
-    else if ( z < 18 ){
+        age.style.backgroundColor = "red";
+
+    } else if (age.value < 18) {
         alert("Apenas maiores de idade");
-        return false;
-    }
-   
-    else {
+        age.style.backgroundColor = "red"
+
+    } else {
         alert("Enviado com Sucesso");
-        return true;
 
     }
-   
+
 
 
 }

@@ -1,8 +1,7 @@
 
 
+function validateForm(event) {
 
-function validateForm() {
-    event.preventDefault()
     const name = document.getElementById("name");
     const mail = document.getElementById("mail");
     const age = document.getElementById("age");
@@ -11,20 +10,25 @@ function validateForm() {
     if (name.value === "") {
         alert("Preencha todos os espacos");
         name.style.backgroundColor = "red";
+        event.preventDefault()
 
     } else if (mail.value === "") {
         alert("Preencha todos os espacos");
         mail.style.backgroundColor = "red";
+        event.preventDefault()
     } else if (!mail.value.match(regex)) {
         alert("Email Invalido");
         mail.style.backgroundColor = "red";
+        event.preventDefault()
     } else if (age.value === "") {
         alert("Preencha todos os espacos");
         age.style.backgroundColor = "red";
+        event.preventDefault()
 
     } else if (age.value < 18) {
         alert("Apenas maiores de idade");
         age.style.backgroundColor = "red"
+        event.preventDefault()
 
     } else {
         alert("Enviado com Sucesso");
